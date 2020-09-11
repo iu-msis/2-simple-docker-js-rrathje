@@ -1,0 +1,24 @@
+body {
+  background-color: tan;
+  text-align: center;
+  color: gray;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+#link {
+  color: white;
+}
+
+.table {
+  background-color: white;
+}
+
+h4 {
+  color: gray;
+}
