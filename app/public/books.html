@@ -32,7 +32,7 @@
           <a href="https://unsplash.com/photos/YLSwjSy7stw" id="link">https://unsplash.com/photos/YLSwjSy7stw</a>
   </div>
 
-  <table class="table">
+  <table id="taskTable" class="table">
     <thead>
       <tr>
         <th scope="col">Title</th>
@@ -92,6 +92,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src='tablesort.min.js'></script>
+    <script src='js/tablesort.min.js'></script>
+    <script>
+    //tablesor plug http://tristen.ca/tablesort/demo/
+    new Tablesort(document.getElementById('taskTable'));
+    </script>
 </body>
 </html>
