@@ -37,11 +37,11 @@
           <a v-bind:href="userImgLrg">
             <img v-bind:src="userImgThb">
           </a>
-          <h4>Name: {{userName}}</h4>
-          <h4>Email: <a :href=" 'mailto:' + userEmail">{{userEmail}}</a></h4>
-          <h4>Birthdate: {{formatDate(userDOB)}}</h4>
-          <h4>Age: {{userAge}}</h4>
-          <h4>Country of Origin: {{userCountry}}</h4>
+            <h4>Name: {{userName}}</h4>
+            <h4>Email: <a :href=" 'mailto:' + userEmail">{{userEmail}}</a></h4>
+            <h4>Birthdate: {{formatDate(userDOB)}}</h4>
+            <h4>Age: {{userAge}}</h4>
+            <h4>Country of Origin: {{userCountry}}</h4>
           <form v-on:submit.prevent="fetchUser">
             <button>Get New User</button>
           </form>
