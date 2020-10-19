@@ -13,7 +13,7 @@ var app = new Vue({
     this.fetchUser();
   },
   methods: {
-    fetchUser: function() {
+    fetchUser() {
       fetch('https://randomuser.me/api/')
         .then(response => response.json())
         .then(data => {

@@ -10,26 +10,74 @@
     <link rel="stylesheet" href="css/styles.css">
 
   </head>
-<!-- Code from Bootstrap-->
   <body>
+<!--
+    <div id="commentTable">
+      <table class="table" id="commentTable">
+        <thead>
+          <th>Comments</th>
+        </thead>
 
-  <table class="table" id="commentTable">
-    <thead>
-      <tr>
-        <th scope="col">Comment</th>
-      </tr>
-    </thead>
-    <tbody id="commentTableBody">
-      <tr>
-        <th scope="col">????</th>
-      </tr>
-      <tr>
-        <th><form id="newCommentForm"><input type="text" id="comment" placeholder="Enter Comment"></form></th>
-        <th><button type="submit" id="submitNewComment">Submit</button>
-      </tr>
-    </tbody
+        <tbody id="commentTableBody">
+          <tr class="comInfo" v-for="comment in comInfo">
+            <td>{{comment.id}}</td>
+            <td>{{comment.commentText}}</td>
+          </tr>
+        </tbody>
 
-  </table>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>
+              <form v-on:submit.prevent="createComment()" id="newCommentForm">
+                <div class ="comInfo">
+                  <label for="newComment">Post</label>
+                  <input type="textarea" v-model='newComment.commentText' class="form-control" id="newComment" placeholder="Enter Comment">
+                </div></<br>
+              </td>
+            <td><button value="Post Comment" class="button" type="submit" id="submitNewComment">Post Comment</button></td>
+            </form>
+          </tr>
+      </table>
+    </div>
+-->
+
+    <table class="table" id="commentTable">
+
+      <div class="col-6" id="userCom">
+
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Comment</th>
+            </tr>
+          </thead>
+
+          <tbody id="commentTableBody">
+
+            <tr>
+              <div id="comInfo" v-for="comment in comInfo">
+                <td>{{comment.id}}</td>
+                <td>{{comment.commentText}}</td>
+              </div>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <td></td>
+            <td>
+              <form v-on:submit.prevent="createComment()" id="newCommentForm">
+                <div class ="comInfo">
+                  <input type="textarea" v-model='newComment.commentText' class="form-control" id="newComment" placeholder="Enter Comment:">
+                  </div></<br>
+              </td>
+            <td><button value="Post Comment" class="button" type="submit" id="submitNewComment">Post Comment</button></td>
+            </form>
+          </tfoot>
+
+        </div>
+
+      </table>
 
     <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -37,7 +85,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
-    <script src="js/profile.app.js"></script>
-</body>
-</html>
+    <script src="js/comments.app.js"></script>
+  </body>
+  </html>
