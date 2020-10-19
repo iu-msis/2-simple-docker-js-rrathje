@@ -1,19 +1,14 @@
 var app = new Vue({
   el: '#userCom',
   data: {
-      comInfo: [{
-        id: '',
-        commentText: ''
-      }],
+      comInfo: [
+
+      ],
 
       newComment: {
         id: '',
         commentText: ''
       }
-  },
-
-  created(){
-    this.fetchComment();
   },
 
   methods: {
@@ -34,10 +29,10 @@ var app = new Vue({
           "Content-type": "application/json; charset=utf-8"
         }
       })
-      .then( response => response.json() )
+      .then(response => response.json())
       .then( json => {
         console.log("Returned from post:", json);
-        this.userCom.push(json);
+        this.comInfo = json;
         this.newComment = this.newCommentData();
       });
 
@@ -52,5 +47,7 @@ var app = new Vue({
       }
     }
   },
-
-  })
+  created(){
+    this.fetchComment();
+  }
+});

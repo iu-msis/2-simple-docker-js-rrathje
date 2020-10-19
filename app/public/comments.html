@@ -42,9 +42,8 @@
     </div>
 -->
 
+    <div class="col-6" id="userCom">
     <table class="table" id="commentTable">
-
-      <div class="col-6" id="userCom">
 
           <thead>
             <tr>
@@ -55,29 +54,21 @@
 
           <tbody id="commentTableBody">
 
-            <tr>
-              <div id="comInfo" v-for="comment in comInfo">
+            <tr id="comInfo" v-for="comment in comInfo">
                 <td>{{comment.id}}</td>
                 <td>{{comment.commentText}}</td>
-              </div>
             </tr>
           </tbody>
 
-          <tfoot>
-            <td></td>
-            <td>
-              <form v-on:submit.prevent="createComment()" id="newCommentForm">
-                <div class ="comInfo">
-                  <input type="textarea" v-model='newComment.commentText' class="form-control" id="newComment" placeholder="Enter Comment:">
-                  </div></<br>
-              </td>
-            <td><button value="Post Comment" class="button" type="submit" id="submitNewComment">Post Comment</button></td>
-            </form>
-          </tfoot>
-
-        </div>
-
       </table>
+
+          <form v-on:submit.prevent="createComment()" id="newCommentForm">
+              <input type="textarea" v-model='newComment.commentText' class="form-control" id="newComment" placeholder="Enter Comment:">
+              </<br>
+            <button value="Post Comment" class="button" type="submit">Post Comment</button>
+          </form>
+
+    </div>
 
     <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
